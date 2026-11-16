@@ -1,0 +1,14 @@
+.git
+.gitignore
+.gocache
+.gomodcache
+.gotmp
+bin
+coverage.out
+*_test.go
+README.md
+docker-compose.yml
+.github
+*.db
+*.db-shm
+*.db-wal
