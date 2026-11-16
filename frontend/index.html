@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>LogSeeker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>LogSeeker</h1>
+        </header>
+
+        <main>
+            <form id="search-form">
+                <input
+                    id="regex-input"
+                    type="text"
+                    placeholder="Filter"
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button type="submit">Search</button>
+            </form>
+            <p id="regex-error" class="error" hidden></p>
+
+            <p id="status" role="status"></p>
+
+            <table id="logs-table" hidden>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Level</th>
+                        <th>Source</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody id="logs-body"></tbody>
+            </table>
+        </main>
+
+        <script src="config.js"></script>
+        <script src="api.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
