@@ -1,0 +1,25 @@
+services:
+  seed-mock-logs:
+    build: .
+    command: ["mock-logs"]
+    environment:
+      LOGSEEKER_DB: "/data/logseeker.db"
+    volumes:
+      - logseeker-data:/data
+    restart: "no"
+  logseeker:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      LOGSEEKER_ADDR: ":8080"
+      LOGSEEKER_DB: "/data/logseeker.db"
+    volumes:
+      - logseeker-data:/data
+    depends_on:
+      seed-mock-logs:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+volumes:
+  logseeker-data:
