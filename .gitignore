@@ -1,0 +1,24 @@
+# Local SQLite data
+*.db
+*.db-shm
+*.db-wal
+
+# Go build and test output
+/bin/
+/logseeker
+/logseeker.exe
+*.test
+/coverage.out
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Local verification caches
+/.gocache/
+/.gomodcache/
+/.gotmp/
+
+# Local container overrides
+docker-compose.override.yml
